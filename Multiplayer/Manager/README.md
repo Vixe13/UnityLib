@@ -81,6 +81,7 @@ Once everyone has joined, the screen disappears and a timer of a few seconds app
 ### **4. Script enabled phase**
 When the timer is finished, all previously deactivated scripts reactivate.
 The game starts then.
+
 ---
 
 
