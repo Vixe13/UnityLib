@@ -27,12 +27,15 @@ Here, the PlayerInputManager component is the central unit of the system:
 
 #### **1.1 Entry/Exit of players & Numbers players**
 Players' entries and exits are based on __Unity Events__.
+
 ![PlayerInputManager Unity Event](./Docs~/PlayerInputManager_UnityEvent.png "PlayerInputManager Unity Event")
 
 When a player will join, an event will be called -> __Player Joined Event__.
+
 ![PlayerInputManager Notification Behavior](./Docs~/PlayerInputManager_UnityEventJoin.png "PlayerInputManager Notification Behavior")
 
 This event is called when you activate a specific input that is specified on the component.
+
 ![PlayerInputManager Action Join](./Docs~/PlayerInputManager_ActionJoin.png "PlayerInputManager Action Join")
 
 In our system, this event will call 2 methods:
@@ -42,6 +45,7 @@ In our system, this event will call 2 methods:
 
 #### **1.2 Instiante a prefab Player**
 In the PlayerInputManager, we refer to a prefab "Player" which will be instantized each time a player joins the game.
+
 ![PlayerInputManagerScreen](./Docs~/PlayerInputManagerScreen1.png "PlayerInputManagerScreen")
 
 
@@ -58,6 +62,7 @@ This script must be executed before all others to make sure there are no errors.
 For this, it is best to put the script first in the Script Execution order.
 
 *! This method is ephemeral because it is not optimized. !*
+
 ![ScriptExecutionOrder](./Docs~/ScriptExecutionOrder1.png "ScriptExecutionOrder")
 ![ScriptExecutionOrder](./Docs~/ScriptExecutionOrder2.png "ScriptExecutionOrder")
 ![ScriptExecutionOrder](./Docs~/ScriptExecutionOrder.jpg "ScriptExecutionOrder")
@@ -67,6 +72,7 @@ For this, it is best to put the script first in the Script Execution order.
 ### **3. Joining screen & Timer before game starts**
 This screen shows all players who are ready to play.
 It is supposed to contain/activate all feedback showing that a player has joined the game.
+
 ![ScriptExecutionOrder](./Docs~/PlayerManagerScriptJoin.png "ScriptExecutionOrder")
 
 Once everyone has joined, the screen disappears and a timer of a few seconds appears so that players feel ready to play when the timer is at 0 seconds.
