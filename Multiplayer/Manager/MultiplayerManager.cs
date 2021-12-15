@@ -150,7 +150,7 @@ public class MultiplayerManager : MonoBehaviour
     // Look for each player when someone is ready
     public void PlayerIsReady()
     {
-        if(_pManager.playerCount == 1 && !_player1IsReady)
+        if (_pManager.playerCount == 1 && !_player1IsReady)
         {
             _player1IsReady = true;
 
@@ -158,7 +158,7 @@ public class MultiplayerManager : MonoBehaviour
             _imageCharacters[_pManager.playerCount - 1].enabled = true;
             _imageCharacters[_pManager.playerCount - 1].sprite = _characters[_pManager.playerCount - 1];
         }
-        else if(_pManager.playerCount == 2 && !_player2IsReady)
+        else if (_pManager.playerCount == 2 && !_player2IsReady)
         {
             _player2IsReady = true;
 
@@ -173,8 +173,6 @@ public class MultiplayerManager : MonoBehaviour
     {
         _pManager.joinAction.action.Disable();
 
-
-
         _gameStartTimeScreen.SetActive(true);
         _joiningScreen.SetActive(false);
 
@@ -188,8 +186,11 @@ public class MultiplayerManager : MonoBehaviour
         }
     }
 
-    // Puts players on the field
-    public void GetPlayerInstance(PlayerInput pInput)
+    /// <summary>
+    /// Spawn players on the scene
+    /// </summary>
+    /// <param name="pInput"> This PlayerInput is specific to the player who has just joined the game </param>
+    public void NewPlayerSpawn(PlayerInput pInput)
     {
         if (_pManager.playerCount == 1)
         {

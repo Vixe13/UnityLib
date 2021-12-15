@@ -8,12 +8,9 @@
 ---
 
 ## ***Role***
-This script is there to create a local multiplayer in the game.
-
-Its use is based on the PlayerInputManager.
-
-The current script system uses the playerCount that joined the game.
-
+This script is there to create a local multiplayer in the game. </br>
+Its use is based on the PlayerInputManager. </br>
+The current script system uses the playerCount that joined the game. </br>
 Until all players join the game, most of the game’s scripts will remain disabled and the game will not start.
 
 ---
@@ -24,24 +21,33 @@ Until all players join the game, most of the game’s scripts will remain disabl
 Here, the PlayerInputManager component is the central unit of the system:
 1. It manages the entry and exit of players in the game. And it has a player counter which will allow to check the number of players in the  game and to define the order of the players,
 3. It instantiates a character prefab when a player join.
+</br></br>
 
 #### **1.1 Entry/Exit of players & Numbers players**
 Players' entries and exits are based on __Unity Events__.
 
 ![PlayerInputManager Unity Event](./Docs~/PlayerInputManager_UnityEvent.png "PlayerInputManager Unity Event")
 
-When a player will join, an event will be called -> __Player Joined Event__.
+When a player will join, an event will be called -> __Player Joined Event__. <br/>
+In our system, this event will call 2 methods:
+- *PlayerIsReady* -> will diplay in game that the player who has just joined is ready
+- *NewPlayerSpawn* -> Spawns the prefab instance in the scene according spawn points.
 
 ![PlayerInputManager Notification Behavior](./Docs~/PlayerInputManager_UnityEventJoin.png "PlayerInputManager Notification Behavior")
-
+</br></br>
 This event is called when you activate a specific input that is specified on the component.
 
 ![PlayerInputManager Action Join](./Docs~/PlayerInputManager_ActionJoin.png "PlayerInputManager Action Join")
 
-In our system, this event will call 2 methods:
-- *PlayerIsReady* -> will diplay in game that the player who has just joined is ready
-- *GetPlayerInstance* -> Places the prefab instance in the scene
+#### **1.1.1 PlayerIsReady**
+This function will tell the system that the player who has just joined is ready.</br>
+It will then show it on the screen (see 3.Joining screen & Timer before game starts).
 
+#### **1.1.2 NewPlayerSpawn**
+This method will place the new player in the scene on a spawn point.
+
+
+</br></br>
 
 #### **1.2 Instiante a prefab Player**
 In the PlayerInputManager, we refer to a prefab "Player" which will be instantized each time a player joins the game.
