@@ -6,13 +6,17 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// Manages a local multiplayer system
+/// </summary>
+[HelpURL("https://github.com/Vixe13/UnityLib/blob/develop/Multiplayer/Manager/README.md")]
 public class MultiplayerManager : MonoBehaviour
 {
-    // This Component manages the arrival of players in the game
+    /// <summary>
+    /// This Component manages the arrival of players in the game <br/>
+    /// </summary>
     PlayerInputManager _pManager;
-
-    // Current number of players who joined the game 
-    int _playerCount = 0;
 
     // Check the status of the players, whether they are ready or not
     #region PlayersIsReady
@@ -20,7 +24,7 @@ public class MultiplayerManager : MonoBehaviour
     //bool[] _playersIsReady;
     bool _player1IsReady = false;
     bool _player2IsReady = false;
-    
+
     // These accessors will be integrated in "PlayerController" script of the projects
     #region  Accessors
     public bool Player1IsReady
@@ -47,8 +51,8 @@ public class MultiplayerManager : MonoBehaviour
     #endregion
     #endregion
 
-    // Players' appearance points at the beginning of the game
     [Header("Spawns")]
+    [Tooltip("Players' spawn points at the beginning of the game")]
     [SerializeField] Transform[] _spawnsPlayer;
 
     // Screen showing which players are ready
@@ -89,8 +93,11 @@ public class MultiplayerManager : MonoBehaviour
     float _currentTimeBeforeStart;
     #endregion
 
-    // List of Monobehavior scripts that will be disabled
+    
+    [Tooltip("List of Monobehavior scripts that will be disabled")]
     [SerializeField] MonoBehaviour[] _scriptsBeforeStart;
+
+    /// <inheritdoc cref="_scriptsBeforeStart">
     public MonoBehaviour[] ScriptsBeforeStart { get { return _scriptsBeforeStart; } set { _scriptsBeforeStart = value; } }
 
 
@@ -165,6 +172,9 @@ public class MultiplayerManager : MonoBehaviour
     private void ReadyToLaunch()
     {
         _pManager.joinAction.action.Disable();
+
+
+
         _gameStartTimeScreen.SetActive(true);
         _joiningScreen.SetActive(false);
 
@@ -189,7 +199,7 @@ public class MultiplayerManager : MonoBehaviour
         else if (_pManager.playerCount == 2)
         {
             pInput.gameObject.transform.position = _spawnsPlayer[1].position;
-            pInput.gameObject.transform.rotation = _spawnsPlayer[1].rotation;    
+            pInput.gameObject.transform.rotation = _spawnsPlayer[1].rotation;
         }
     }
 
