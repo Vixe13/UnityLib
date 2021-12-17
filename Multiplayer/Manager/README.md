@@ -15,7 +15,7 @@ Until all players join the game, most of the game’s scripts will remain disabl
 
 ---
 
-## ***Operation***
+## ***Recipe***
 
 ### **1. PlayerInputManager**
 Here, the PlayerInputManager component is the central unit of the system:
@@ -69,11 +69,7 @@ For this, it is best to put the script first in the Script Execution order.
 
 *! This method is ephemeral because it is not optimized. !*
 
-![ScriptExecutionOrder](./Docs~/ScriptExecutionOrder1.png "ScriptExecutionOrder")
-![ScriptExecutionOrder](./Docs~/ScriptExecutionOrder2.png "ScriptExecutionOrder")
-![ScriptExecutionOrder](./Docs~/ScriptExecutionOrder.jpg "ScriptExecutionOrder")
-![ScriptExecutionOrder](./Docs~/ScriptExecutionOrder3.png "ScriptExecutionOrder")
-
+![ScriptExecutionOrder](./Docs~/ScriptExecutionOrderMix.png "ScriptExecutionOrder")
 
 ### **3. Joining screen & Timer before game starts**
 This screen shows all players who are ready to play.
